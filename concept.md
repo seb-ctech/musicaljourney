@@ -20,6 +20,7 @@ https://package.elm-lang.org/packages/dillonkearns/elm-pages-v3-beta/latest/Back
 - Parse Files
 
 https://package.elm-lang.org/packages/dillonkearns/elm-pages-v3-beta/latest/BackendTask-File
+https://github.com/norpan/elm-file-reader/tree/2.0.1
 
 I Want a lighweight environment for quick GHCi evaluation. Each environment has subfolders.
 GHC versions should be recognized automatically. Each sub-folder should have a way to switch between environments.
@@ -36,6 +37,8 @@ The resulting code will be shown with a play button. Giving a playback of the re
 
 
 - Animation support for Transitions
+
+https://github.com/mdgriffith/elm-style-animation/tree/3.5.5#examples
 
 - Represent Code in HTML, with Syntax Highlighting
 
