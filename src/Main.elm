@@ -4,6 +4,7 @@ import Html
 import Css exposing (..)
 import Html.Styled exposing (..)
 import Html.Styled.Attributes exposing (css, href, src)
+import Html.Styled.Events exposing (onClick)
 
 main = 
   Browser.sandbox
@@ -12,30 +13,61 @@ main =
         , update = update
         }
 
-type alias Model = Int
+type alias Model = 
+  { framework : String
+  , progressStage : Int
+  }
 
+-- product type
 init : Model
 init = 
-  0
+  { framework = "something"
+  , progressStage = 0
+  }
 
-
-view _ = 
+view : Model -> Html Msg
+view model = 
   div 
     []
     [ 
-      ul 
-        [ css 
-            [ displayFlex
-             ,flexDirection row
-             ,listStyle none
-            ]
-        ]
-        (List.map (\name -> 
-          li 
-            [ css 
-              [ margin (px 5)]
-          ] [a [] [text name]]) 
-          ["TidalCycles", "Euterpea", "Kulitta"])
+      frameworkNav ["TidalCycles", "Euterpea", "Kulitta"]
+    , h1 [] [text ("You are looking at -> " ++ model.framework)]
     ]
-  
-update model _ = model
+
+
+-- sum type
+type Msg = 
+    SwitchFramework String
+  | NextStage Int
+
+
+frameworkNav : List String -> Html Msg
+frameworkNav fws = 
+  ul 
+    [ 
+      css 
+        [ displayFlex
+        , flexDirection row
+        , listStyle none
+        ]
+    ]
+    (List.map (\name -> 
+      li 
+        [ 
+          css 
+          [ margin (px 5)]
+        ] 
+        [a [onClick (SwitchFramework name)] [text name]
+        ]) 
+      fws)
+
+
+update : Msg -> Model -> Model
+update msg model = 
+  case msg of
+    
+    SwitchFramework name -> 
+      { model | framework = name}
+
+    NextStage offset ->
+      { model | progressStage = model.progressStage + offset}
