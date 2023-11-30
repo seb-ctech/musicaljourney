@@ -14,6 +14,7 @@ https://elm-pages-netlify-cms.netlify.app/
 
 - Build static content while Building
 
+https://discourse.elm-lang.org/t/looking-for-a-survey-of-frameworks-tooling-and-alternative-compilers/9066
 https://elm-pages.com/
 https://package.elm-lang.org/packages/dillonkearns/elm-pages-v3-beta/latest/BackendTask
 
