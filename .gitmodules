@@ -1,0 +1,3 @@
+[submodule "haskell-music-journey"]
+	path = haskell-music-journey
+	url = .\\haskell-music-journey\\
