@@ -1,3 +1,5 @@
 [submodule "haskell-music-journey"]
 	path = haskell-music-journey
 	url = .\\haskell-music-journey\\
+[submodule ".\\haskell-music-journey\\"]
+	url = git@github.com:seb-ctech/musicaljourney-web.git
