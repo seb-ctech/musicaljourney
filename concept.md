@@ -18,6 +18,8 @@ https://discourse.elm-lang.org/t/looking-for-a-survey-of-frameworks-tooling-and-
 https://elm-pages.com/
 https://package.elm-lang.org/packages/dillonkearns/elm-pages-v3-beta/latest/BackendTask
 
+elm-pages requires 'lambdera'.
+
 - Parse Files
 
 https://package.elm-lang.org/packages/dillonkearns/elm-pages-v3-beta/latest/BackendTask-File
