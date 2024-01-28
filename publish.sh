@@ -32,7 +32,7 @@ if [["$1" = "test"]]
 then
 	npx elm-pages dev
 else
-	git add "$target_dir" && git commit -m "Update Journal $((date +'%Y-%m-%d') + (date +"%T"))" && git push
+	git add "$target_dir" && git commit -m "Update Journal: $(date +'%Y-%m-%d'), $(date +"%T"))" && git push
 fi
 
 cd "$main_dir"
