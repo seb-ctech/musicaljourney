@@ -1,11 +1,9 @@
 #!/usr/bin/env bash
-
-# https://devhints.io/bash
-
-main_dir = "$PWD"
-web_dir = "$main_dir/webapp-journal/"
-source_dir = "$main_dir/composition-experiments/"
-target_dir = "$web_dir/src/frameworks"
+## https://devhints.io/bash
+main_dir="$PWD"
+web_dir="$main_dir/webapp-journal"
+source_dir="$main_dir/composition-experiments"
+target_dir="$web_dir/src/frameworks"
 
 cd "$source_dir" || exit
 
@@ -18,7 +16,12 @@ cd ..
 # Loop through the subdirectories
 for sub_dir in "${sub_dirs[@]}"; do
     # Create the corresponding target subdirectory if it doesn't exist
-    mkdir -p "$target_dir/$sub_dir"
+    if [ -d "$target_dir/$sub_dir" ]; then
+	echo "$target_dir/$sub_dir does exist."
+    else
+	echo "$target_dir/$sub_dir does not exist. Creating"
+	mkdir -p "$target_dir/$sub_dir"
+    fi
 # TODO: Make this more dynamic with a list of extensions
     # Find and copy .md files from the source subdirectory to the target subdirectory
     find "$source_dir/$sub_dir" -name "*.md" -exec cp -p {} "$target_dir/$sub_dir/" \;
@@ -27,12 +30,11 @@ done
 echo "Files copied successfully."
 
 cd "$web_dir"
-
-if [["$1" = "test"]]
-then
+echo "Executed with $1"
+if ["$1" = "test"];then
 	npx elm-pages dev
 else
-	git add "$target_dir" && git commit -m "Update Journal: $(date +'%Y-%m-%d'), $(date +"%T"))" && git push
+	git add "$target_dir" && git commit -m "Update Journal: $(date +'%Y-%m-%d'), $(date +"%T")" && git push
 fi
 
 cd "$main_dir"
