@@ -27,18 +27,18 @@ for sub_dir in "${sub_dirs[@]}"; do
     find "$source_dir/$sub_dir" -name "*.md" -exec cp -p {} "$target_dir/$sub_dir/" \;
 done
 
-echo "Files copied successfully."
+echo -e "\nFiles copied successfully."
 
 cd "$web_dir"
 
 while getopts "t" opt; do
   case $opt in
     t)
-	echo "Testing locally with elm-pages and new Markdown files!"
+	echo -e "\n Testing locally with elm-pages and new Markdown files!"
 	npx elm-pages dev
       ;;
     ?)
-	echo "Publishing to GitHub for CD"
+	echo -e "\n Publishing to GitHub for CD"
 	git add "$target_dir" && git commit -m "Update Journal: $(date +'%Y-%m-%d'), $(date +"%T")" && git push
       ;;
   esac
@@ -46,6 +46,6 @@ done
 
 cd "$main_dir"
 
-echo "Files published successfully!"
+echo -e "\n Files published successfully!"
 # TODO: Use netlify CLI to test netlify build locally and deploy without GitHub
 # https://docs.netlify.com/cli/get-started/
