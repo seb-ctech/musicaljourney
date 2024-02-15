@@ -30,12 +30,19 @@ done
 echo "Files copied successfully."
 
 cd "$web_dir"
-echo "Executed with $1"
-if ["$1" = "test"];then
+
+while getopts "t" opt; do
+  case $opt in
+    t)
+	echo "Testing locally with elm-pages and new Markdown files!"
 	npx elm-pages dev
-else
+      ;;
+    ?)
+	echo "Publishing to GitHub for CD"
 	git add "$target_dir" && git commit -m "Update Journal: $(date +'%Y-%m-%d'), $(date +"%T")" && git push
-fi
+      ;;
+  esac
+done
 
 cd "$main_dir"
 
