@@ -1,3 +1,24 @@
 [submodule "webapp-journal"]
 	path = webapp-journal
 	url = https://github.com/seb-ctech/master-webapp-journal.git
+[submodule "composition-experiments/Aoide/Aoide"]
+	path = composition-experiments/Aoide/Aoide
+	url = git@github.com:LiisiKerik/Aoide.git
+[submodule "composition-experiments/AlgoRhythm/AlgoRhythm"]
+	path = composition-experiments/AlgoRhythm/AlgoRhythm
+	url = git@github.com:omelkonian/AlgoRhythm.git
+[submodule "composition-experiments/Euterpea/Euterpea2"]
+	path = composition-experiments/Euterpea/Euterpea2
+	url = https://github.com/Euterpea/Euterpea2
+[submodule "composition-experiments/Fadno/fadno"]
+	path = composition-experiments/Fadno/fadno
+	url = git@github.com:sirlensalot/fadno.git
+[submodule "composition-experiments/Kulitta/Kulitta"]
+	path = composition-experiments/Kulitta/Kulitta
+	url = git@github.com:donya/Kulitta.git
+[submodule "composition-experiments/MusicSuite/music-suite"]
+	path = composition-experiments/MusicSuite/music-suite
+	url = git@github.com:music-suite/music-suite.git
+[submodule "composition-experiments/Tidal/tidal"]
+	path = composition-experiments/Tidal/tidal
+	url = git@github.com:tidalcycles/Tidal.git

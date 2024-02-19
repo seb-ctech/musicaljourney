@@ -1,0 +1,2 @@
+- Integrates Lilypond which should be capable of MIDI export
+- Is a bundle of packages

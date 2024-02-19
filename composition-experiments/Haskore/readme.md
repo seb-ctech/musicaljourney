@@ -1,0 +1,2 @@
+- supports MIDI export
+- Source is not git https://archives.haskell.org/code.haskell.org/haskore/revised/core/
